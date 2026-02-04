@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--favicon-->
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+    <!--plugins-->
+    <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="assets/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
+    <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="assets/plugins/fancy-file-uploader/fancy_fileupload.css" rel="stylesheet" />
+    <link href="assets/plugins/Drag-And-Drop/dist/imageuploadify.min.css" rel="stylesheet" />
+    <!-- loader-->
+    <link href="assets/css/pace.min.css" rel="stylesheet" />
+    <script src="assets/js/pace.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-extended.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link href="assets/css/icons.css" rel="stylesheet" />
+    <!-- Theme Style CSS -->
+    <link rel="stylesheet" href="assets/css/dark-theme.css" />
+    <link rel="stylesheet" href="assets/css/semi-dark.css" />
+    <link rel="stylesheet" href="assets/css/header-colors.css" />
+    <title>Safety Incident News Yokoten - Entry Page #2</title>
+    <style>
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .plant-item {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+        .plant-item:hover {
+            background-color: #e9ecef;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .request-table td {
+            vertical-align: middle;
+        }
+        .btn-delete {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!--sidebar wrapper -->
+        <div class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
+                <!-- <div>
+                    <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon" />
+                </div>
+                <div>
+                    <h4 class="logo-text">Rocker</h4>
+                </div> -->
+                <div class="toggle-icon ms-auto">
+                    <i class="bx bx-arrow-back"></i>
+                </div>
+            </div>
+            <!--navigation-->
+            <ul class="metismenu" id="menu">
+                <!-- <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="bx bx-home-alt"></i></div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+                    <ul>
+                        <li><a href="index.html"><i class="bx bx-radio-circle"></i>Default</a></li>
+                        <li><a href="index2.html"><i class="bx bx-radio-circle"></i>Alternate</a></li>
+                        <li><a href="index3.html"><i class="bx bx-radio-circle"></i>Graphical</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="bx bx-category"></i></div>
+                        <div class="menu-title">Application</div>
+                    </a>
+                    <ul>
+                        <li><a href="app-emailbox.html"><i class="bx bx-radio-circle"></i>Email</a></li>
+                        <li><a href="app-chat-box.html"><i class="bx bx-radio-circle"></i>Chat Box</a></li>
+                        <li><a href="app-file-manager.html"><i class="bx bx-radio-circle"></i>File Manager</a></li>
+                        <li><a href="app-contact-list.html"><i class="bx bx-radio-circle"></i>Contatcs</a></li>
+                        <li><a href="app-to-do.html"><i class="bx bx-radio-circle"></i>Todo List</a></li>
+                        <li><a href="app-invoice.html"><i class="bx bx-radio-circle"></i>Invoice</a></li>
+                        <li><a href="app-fullcalender.html"><i class="bx bx-radio-circle"></i>Calendar</a></li>
+                    </ul>
+                </li>
+                <li class="menu-label">Forms & Tables</li>
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon"><i class="bx bx-message-square-edit"></i></div>
+                        <div class="menu-title">Forms</div>
+                    </a>
+                    <ul>
+                        <li><a href="form-elements.html"><i class="bx bx-radio-circle"></i>Form Elements</a></li>
+                        <li><a href="form-input-group.html"><i class="bx bx-radio-circle"></i>Input Groups</a></li>
+                        <li><a href="form-radios-and-checkboxes.html"><i class="bx bx-radio-circle"></i>Radios & Checkboxes</a></li>
+                        <li><a href="form-layouts.html"><i class="bx bx-radio-circle"></i>Forms Layouts</a></li>
+                        <li><a href="form-validations.html"><i class="bx bx-radio-circle"></i>Form Validation</a></li>
+                        <li><a href="form-wizard.html"><i class="bx bx-radio-circle"></i>Form Wizard</a></li>
+                        <li><a href="form-text-editor.html"><i class="bx bx-radio-circle"></i>Text Editor</a></li>
+                        <li><a href="form-file-upload.html"><i class="bx bx-radio-circle"></i>File Upload</a></li>
+                    </ul>
+                </li> -->
+            </ul>
+            <!--end navigation-->
+        </div>
+        <!--end sidebar wrapper -->
+        
+        <!--start header -->
+        <header>
+            <div class="topbar d-flex align-items-center">
+                <nav class="navbar navbar-expand gap-3">
+                    <!-- <div class="mobile-toggle-menu"><i class="bx bx-menu"></i></div>
+                    
+                    <div class="position-relative search-bar d-lg-block d-none" data-bs-toggle="modal" data-bs-target="#SearchModal">
+                        <input class="form-control px-5" disabled type="search" placeholder="Search" />
+                        <span class="position-absolute top-50 search-show ms-3 translate-middle-y start-0 top-50 fs-5">
+                            <i class="bx bx-search"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="top-menu ms-auto">
+                        <ul class="navbar-nav align-items-center gap-1">
+                            <li class="nav-item dark-mode d-none d-sm-flex">
+                                <a class="nav-link dark-mode-icon" href="javascript:;"><i class="bx bx-moon"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="user-box dropdown px-3"> -->
+                        <!-- <a class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar" />
+                            <div class="user-info">
+                                <p class="user-name mb-0">Pauline Seitz</p>
+                                <p class="designattion mb-0">Web Designer</p>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-user fs-5"></i><span>Profile</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-cog fs-5"></i><span>Settings</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-home-circle fs-5"></i><span>Dashboard</span></a></li>
+                            <li>
+                                <div class="dropdown-divider mb-0"></div>
+                            </li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-log-out-circle"></i><span>Logout</span></a></li>
+                        </ul> -->
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--end header -->
+        
+        <!--start page wrapper -->
+        <div class="page-wrapper">
+            <div class="page-content">
+                <!--breadcrumb-->
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pe-3">Forms</div>
+                    <div class="ps-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Safety Incident - Entry Page #2</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="btn-group">
+                            <!-- <button type="button" class="btn btn-primary">Settings</button> -->
+                            <!-- <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button> -->
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
+                                <a class="dropdown-item" href="javascript:;">Action</a>
+                                <a class="dropdown-item" href="javascript:;">Another action</a>
+                                <a class="dropdown-item" href="javascript:;">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:;">Separated link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end breadcrumb-->
+                
+                <div class="row">
+                    <div class="col-xl-11 mx-auto">
+                        <div class="card border-top border-0 border-4 border-danger">
+                            <div class="card-body p-5">
+                                <div class="card-title d-flex align-items-center">
+                                    <div><i class="bx bx-error-circle me-1 font-22 text-danger"></i></div>
+                                    <h5 class="mb-0 text-danger">SAFETY INCIDENT NEWS YOKOTEN (ENTRY PAGE #2)</h5>
+                                </div>
+                                <hr/>
+                                
+                                <form id="yokotenForm" class="row g-3">
+                                    <!-- Section 1: Risk and Hazard Information -->
+                                    <div class="col-md-4">
+                                        <label for="highRisk" class="form-label">8 High-Risk Involved</label>
+                                        <select id="highRisk" class="form-select">
+                                            <option selected>Choose...</option>
+                                            <option value="EX1">EX1</option>
+                                            <option value="EX2">EX2</option>
+                                            <option value="EX3">EX3</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="hazardousSource" class="form-label">Hazardous Source/Event</label>
+                                        <select id="hazardousSource" class="form-select">
+                                            <option selected>Choose...</option>
+                                            <option value="EX4">EX4</option>
+                                            <option value="EX5">EX5</option>
+                                            <option value="EX6">EX6</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="hazardDetail" class="form-label">Hazard Detail</label>
+                                        <input type="text" class="form-control" id="hazardDetail" value="Short circuit due to Rodent">
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label for="targetEquipment" class="form-label">Target Equipment/Process</label>
+                                        <input type="text" class="form-control" id="targetEquipment" placeholder="Enter target equipment or process">
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <hr/>
+                                    </div>
+                                    
+                                    <!-- Section 2: Request Items -->
+                                    <div class="col-12">
+                                        <h6 class="mb-3 text-primary"><i class="bx bx-list-ul me-2"></i>Request Items</h6>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <div class="card bg-light">
+                                            <div class="card-body">
+                                                <div class="row g-3">
+                                                    <div class="col-md-1">
+                                                        <label for="requestNo" class="form-label">No.</label>
+                                                        <input type="text" class="form-control" id="requestNo" value="1" readonly>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-5">
+                                                        <label for="requestPoint" class="form-label">Request Point</label>
+                                                        <input type="text" class="form-control" id="requestPoint" placeholder="Please enter Checkpoints">
+                                                    </div>
+                                                    
+                                                    <div class="col-md-4">
+                                                        <label for="applicableDept" class="form-label">Applicable Dept./Section</label>
+                                                        <input type="text" class="form-control" id="applicableDept" placeholder="Please enter Applicable Dept.">
+                                                    </div>
+                                                    
+                                                    <div class="col-md-2">
+                                                        <label class="form-label">&nbsp;</label>
+                                                        <button type="button" class="btn btn-success w-100" onclick="addRequestItem()">
+                                                            <i class="bx bx-plus me-1"></i>Add
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered request-table">
+                                                <thead class="table-primary">
+                                                    <tr>
+                                                        <th width="80">No.</th>
+                                                        <th>Request Item Description</th>
+                                                        <th width="250">Applicable Dept./Section</th>
+                                                        <th width="100">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="requestTableBody">
+                                                    <tr>
+                                                        <td colspan="4" class="text-center text-muted">No items added.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <hr/>
+                                    </div>
+                                    
+                                    <!-- Section 3: Plant Grids -->
+                                    <div class="col-12">
+                                        <h6 class="mb-0 text-primary"><i class="bx bx-building-house me-2"></i>Plant-1</h6>
+                                        <div id="plant1-grid" class="plant-grid">
+                                            <!-- Plant 1 items will be dynamically added here -->
+                                            <div class="plant-item">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="plant1-item1">
+                                                    <label class="form-check-label" for="plant1-item1">
+                                                        Department A
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="plant-item">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="plant1-item2">
+                                                    <label class="form-check-label" for="plant1-item2">
+                                                        Department B
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="plant-item">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="plant1-item3">
+                                                    <label class="form-check-label" for="plant1-item3">
+                                                        Department C
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="plant-item">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="plant1-item4">
+                                                    <label class="form-check-label" for="plant1-item4">
+                                                        Department D
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <hr/>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <h6 class="mb-0 text-primary"><i class="bx bx-building-house me-2"></i>Plant-2</h6>
+                                        <div id="plant2-grid" class="plant-grid">
+                                            <!-- Plant 2 items will be dynamically added here -->
+                                            <div class="plant-item">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="plant2-item1">
+                                                    <label class="form-check-label" for="plant2-item1">
+                                                        Section A
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="plant-item">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="plant2-item2">
+                                                    <label class="form-check-label" for="plant2-item2">
+                                                        Section B
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="plant-item">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="plant2-item3">
+                                                    <label class="form-check-label" for="plant2-item3">
+                                                        Section C
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="plant-item">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="plant2-item4">
+                                                    <label class="form-check-label" for="plant2-item4">
+                                                        Section D
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="plant-item">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="plant2-item5">
+                                                    <label class="form-check-label" for="plant2-item5">
+                                                        Section E
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <hr/>
+                                    </div>
+                                    
+                                    <!-- Section 4: Target Date -->
+                                    <div class="col-md-6">
+                                        <label for="targetDateReply" class="form-label">Target Date to Reply</label>
+                                        <input type="date" class="form-control" id="targetDateReply">
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <hr/>
+                                    </div>
+                                    
+                                    <!-- Form Actions -->
+                                    <div class="col-12">
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <button type="button" class="btn btn-secondary px-5" onclick="window.history.back()">
+                                                <i class="bx bx-arrow-back me-1"></i>Back
+                                            </button>
+                                            <button type="submit" class="btn btn-primary px-5">
+                                                <i class="bx bx-check me-1"></i>Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end row-->
+            </div>
+        </div>
+        <!--end page wrapper -->
+        
+        <!--start overlay-->
+        <div class="overlay toggle-icon"></div>
+        <!--end overlay-->
+        
+        <!--Start Back To Top Button-->
+        <a href="javaScript:;" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a>
+        <!--End Back To Top Button-->
+        
+        <footer class="page-footer">
+            <p class="mb-0">Copyright © 2021. All right reserved.</p>
+        </footer>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!--plugins-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="assets/plugins/input-tags/js/tagsinput.js"></script>
+    <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <!--app JS-->
+    <script src="assets/js/app.js"></script>
+    
+    <script>
+        // Counter for request items
+        let requestItemCounter = 0;
+        
+        // Function to add request item to table
+        function addRequestItem() {
+            const requestPoint = document.getElementById('requestPoint').value.trim();
+            const applicableDept = document.getElementById('applicableDept').value.trim();
+            
+            if (!requestPoint || !applicableDept) {
+                alert('Please fill in both Request Point and Applicable Dept./Section');
+                return;
+            }
+            
+            requestItemCounter++;
+            const tableBody = document.getElementById('requestTableBody');
+            
+            // Remove "No items" row if it exists
+            if (requestItemCounter === 1) {
+                tableBody.innerHTML = '';
+            }
+            
+            // Create new row
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td class="text-center">${requestItemCounter}</td>
+                <td>${requestPoint}</td>
+                <td>${applicableDept}</td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-danger btn-sm btn-delete">
+                        <i class="bx bx-trash"></i> Delete
+                    </button>
+                </td>
+            `;
+            
+            tableBody.appendChild(newRow);
+            
+            // Clear input fields
+            document.getElementById('requestPoint').value = '';
+            document.getElementById('applicableDept').value = '';
+            
+            // Update counter display
+            document.getElementById('requestNo').value = requestItemCounter + 1;
+            
+            // Focus on request point field
+            document.getElementById('requestPoint').focus();
+        }
+        
+        // Function to delete request item (no longer used directly, kept for reference)
+        function deleteRequestItem(button) {
+            if (confirm('Are you sure you want to delete this item?')) {
+                const row = button.closest('tr');
+                row.remove();
+                
+                // Renumber items
+                const tableBody = document.getElementById('requestTableBody');
+                const rows = tableBody.getElementsByTagName('tr');
+                
+                if (rows.length === 0) {
+                    tableBody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">No items added.</td></tr>';
+                    requestItemCounter = 0;
+                    document.getElementById('requestNo').value = 1;
+                } else {
+                    // Update row numbers
+                    for (let i = 0; i < rows.length; i++) {
+                        rows[i].cells[0].textContent = i + 1;
+                    }
+                    requestItemCounter = rows.length;
+                    document.getElementById('requestNo').value = requestItemCounter + 1;
+                }
+            }
+        }
+        
+        // Event delegation for delete buttons
+        document.getElementById('requestTableBody').addEventListener('click', function(e) {
+            const deleteBtn = e.target.closest('.btn-delete');
+            if (deleteBtn) {
+                deleteRequestItem(deleteBtn);
+            }
+        });
+        
+        // Form submission handler
+        document.getElementById('yokotenForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                highRisk: document.getElementById('highRisk').value,
+                hazardousSource: document.getElementById('hazardousSource').value,
+                hazardDetail: document.getElementById('hazardDetail').value,
+                targetEquipment: document.getElementById('targetEquipment').value,
+                targetDateReply: document.getElementById('targetDateReply').value,
+                requestItems: [],
+                plant1Selections: [],
+                plant2Selections: []
+            };
+            
+            // Collect request items
+            const tableBody = document.getElementById('requestTableBody');
+            const rows = tableBody.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+                if (rows[i].cells.length > 1) {
+                    formData.requestItems.push({
+                        no: rows[i].cells[0].textContent,
+                        description: rows[i].cells[1].textContent,
+                        department: rows[i].cells[2].textContent
+                    });
+                }
+            }
+            
+            // Collect Plant 1 selections
+            const plant1Checkboxes = document.querySelectorAll('#plant1-grid input[type="checkbox"]:checked');
+            plant1Checkboxes.forEach(cb => {
+                formData.plant1Selections.push(cb.nextElementSibling.textContent.trim());
+            });
+            
+            // Collect Plant 2 selections
+            const plant2Checkboxes = document.querySelectorAll('#plant2-grid input[type="checkbox"]:checked');
+            plant2Checkboxes.forEach(cb => {
+                formData.plant2Selections.push(cb.nextElementSibling.textContent.trim());
+            });
+            
+            // Display collected data (for demonstration)
+            console.log('Form Data:', formData);
+            alert('Form submitted successfully!\n\nCheck console for details.');
+            
+            // Here you would typically send the data to your server
+            // fetch('/api/submit-yokoten', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(formData)
+            // });
+        });
+        
+        // Allow Enter key to add request item
+        document.getElementById('applicableDept').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addRequestItem();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--favicon-->
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+    <!--plugins-->
+    <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="assets/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
+    <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="assets/plugins/fancy-file-uploader/fancy_fileupload.css" rel="stylesheet" />
+    <link href="assets/plugins/Drag-And-Drop/dist/imageuploadify.min.css" rel="stylesheet" />
+    <!-- loader-->
+    <link href="assets/css/pace.min.css" rel="stylesheet" />
+    <script src="assets/js/pace.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-extended.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link href="assets/css/icons.css" rel="stylesheet" />
+    <!-- Theme Style CSS -->
+    <link rel="stylesheet" href="assets/css/dark-theme.css" />
+    <link rel="stylesheet" href="assets/css/semi-dark.css" />
+    <link rel="stylesheet" href="assets/css/header-colors.css" />
+    <!-- Froala Editor CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <title>Safety Incident News Yokoten</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!--sidebar wrapper -->
+        <div class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
+                <div>
+                    <!-- <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon" /> -->
+                </div>
+                <div>
+                    <!-- <h4 class="logo-text">Rocker</h4> -->
+                </div>
+                <div class="toggle-icon ms-auto">
+                    <i class="bx bx-arrow-back"></i>
+                </div>
+            </div>
+            <div class="overlay toggle-icon"></div>
+            <!--navigation-->
+            <ul class="metismenu" id="menu">
+                <!-- <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="bx bx-home-alt"></i></div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+                    <ul>
+                        <li><a href="index.html"><i class="bx bx-radio-circle"></i>Default</a></li>
+                        <li><a href="index2.html"><i class="bx bx-radio-circle"></i>Alternate</a></li>
+                        <li><a href="index3.html"><i class="bx bx-radio-circle"></i>Graphical</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="bx bx-category"></i></div>
+                        <div class="menu-title">Application</div>
+                    </a>
+                    <ul>
+                        <li><a href="app-emailbox.html"><i class="bx bx-radio-circle"></i>Email</a></li>
+                        <li><a href="app-chat-box.html"><i class="bx bx-radio-circle"></i>Chat Box</a></li>
+                        <li><a href="app-file-manager.html"><i class="bx bx-radio-circle"></i>File Manager</a></li>
+                        <li><a href="app-contact-list.html"><i class="bx bx-radio-circle"></i>Contatcs</a></li>
+                        <li><a href="app-to-do.html"><i class="bx bx-radio-circle"></i>Todo List</a></li>
+                        <li><a href="app-invoice.html"><i class="bx bx-radio-circle"></i>Invoice</a></li>
+                        <li><a href="app-fullcalender.html"><i class="bx bx-radio-circle"></i>Calendar</a></li>
+                    </ul>
+                </li>
+                <li class="menu-label">Forms & Tables</li>
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon"><i class="bx bx-message-square-edit"></i></div>
+                        <div class="menu-title">Forms</div>
+                    </a>
+                    <ul>
+                        <li><a href="form-elements.html"><i class="bx bx-radio-circle"></i>Form Elements</a></li>
+                        <li><a href="form-input-group.html"><i class="bx bx-radio-circle"></i>Input Groups</a></li>
+                        <li><a href="form-radios-and-checkboxes.html"><i class="bx bx-radio-circle"></i>Radios & Checkboxes</a></li>
+                        <li><a href="form-layouts.html"><i class="bx bx-radio-circle"></i>Forms Layouts</a></li>
+                        <li><a href="form-validations.html"><i class="bx bx-radio-circle"></i>Form Validation</a></li>
+                        <li><a href="form-wizard.html"><i class="bx bx-radio-circle"></i>Form Wizard</a></li>
+                        <li><a href="form-text-editor.html"><i class="bx bx-radio-circle"></i>Text Editor</a></li>
+                        <li><a href="form-file-upload.html"><i class="bx bx-radio-circle"></i>File Upload</a></li>
+                    </ul>
+                </li> -->
+            </ul>
+            <!--end navigation-->
+        </div>
+        <!--end sidebar wrapper -->
+        
+        <!--start header -->
+        <header>
+            <div class="topbar d-flex align-items-center">
+                <nav class="navbar navbar-expand gap-3">
+                    <div class="mobile-toggle-menu"><i class="bx bx-menu"></i></div>
+                    
+                    <!-- <div class="position-relative search-bar d-lg-block d-none" data-bs-toggle="modal" data-bs-target="#SearchModal">
+                        <input class="form-control px-5" disabled type="search" placeholder="Search" />
+                        <span class="position-absolute top-50 search-show ms-3 translate-middle-y start-0 top-50 fs-5">
+                            <i class="bx bx-search"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="top-menu ms-auto">
+                        <ul class="navbar-nav align-items-center gap-1">
+                            <li class="nav-item dark-mode d-none d-sm-flex">
+                                <a class="nav-link dark-mode-icon" href="javascript:;"><i class="bx bx-moon"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="user-box dropdown px-3">
+                        <a class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar" />
+                            <div class="user-info">
+                                <p class="user-name mb-0">Pauline Seitz</p>
+                                <p class="designattion mb-0">Web Designer</p>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-user fs-5"></i><span>Profile</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-cog fs-5"></i><span>Settings</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-home-circle fs-5"></i><span>Dashboard</span></a></li>
+                            <li>
+                                <div class="dropdown-divider mb-0"></div>
+                            </li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-log-out-circle"></i><span>Logout</span></a></li>
+                        </ul>
+                    </div> -->
+                </nav>
+            </div>
+        </header>
+        <!--end header -->
+        
+        <!--start page wrapper -->
+        <div class="page-wrapper">
+            <div class="page-content">
+                <!--breadcrumb-->
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pe-3">Forms</div>
+                    <div class="ps-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Safety Incident Report</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary">Settings</button>
+                            <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
+                                <a class="dropdown-item" href="javascript:;">Action</a>
+                                <a class="dropdown-item" href="javascript:;">Another action</a>
+                                <a class="dropdown-item" href="javascript:;">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:;">Separated link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end breadcrumb-->
+                
+                <div class="row">
+                    <div class="col-xl-10 mx-auto">
+                        <div class="card border-top border-0 border-4 border-primary">
+                            <div class="card-body p-5">
+                                <div class="card-title d-flex align-items-center">
+                                    <div><i class="bx bx-error-circle me-1 font-22 text-primary"></i></div>
+                                    <h5 class="mb-0 text-primary">SAFETY INCIDENT NEWS YOKOTEN</h5>
+                                </div>
+                                <hr/>
+                                
+                                <form class="row g-3">
+                                    <!-- Section 1: Basic Information -->
+                                    <div class="col-md-4">
+                                        <label for="groupCompany" class="form-label">Group Company</label>
+                                        <select id="groupCompany" class="form-select">
+                                            <option selected>Choose...</option>
+                                            <option value="EX1">EX1</option>
+                                            <option value="EX2">EX2</option>
+                                            <option value="EX3">EX3</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="incidentPlant" class="form-label">Incident Plant</label>
+                                        <input type="text" class="form-control" id="incidentPlant" placeholder="Enter plant name">
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="dateOfIncident" class="form-label">Date of Incident</label>
+                                        <input type="date" class="form-control" id="dateOfIncident">
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="timeOfIncident" class="form-label">Time of Incident</label>
+                                        <input type="time" class="form-control" id="timeOfIncident">
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="gradeOfIncident" class="form-label">Grade of Incident</label>
+                                        <select id="gradeOfIncident" class="form-select">
+                                            <option selected>Choose...</option>
+                                            <option value="EX4">EX4</option>
+                                            <option value="EX5">EX5</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="classOfIncident" class="form-label">Class of Incident</label>
+                                        <select id="classOfIncident" class="form-select">
+                                            <option selected>Choose...</option>
+                                            <option value="EX7">EX7</option>
+                                            <option value="EX8">EX8</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <hr/>
+                                    </div>
+                                    
+                                    <!-- Section 2: Incident Details -->
+                                    <div class="col-md-6">
+                                        <label for="incidentalDept" class="form-label">Incidental Dept.</label>
+                                        <input type="text" class="form-control" id="incidentalDept" placeholder="Enter department">
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label for="processEquipment" class="form-label">Process/ Equipment Involved</label>
+                                        <input type="text" class="form-control" id="processEquipment" placeholder="Enter process or equipment">
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <label for="titleOfIncident" class="form-label">Title of Incident</label>
+                                        <input type="text" class="form-control" id="titleOfIncident" placeholder="Enter incident title">
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <label for="circumstances" class="form-label">Circumstances</label>
+                                        <div id="circumstances" class="form-control" style="height: auto; min-height: 200px;">
+                                            <p>Describe the circumstances of the incident...</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <label for="reflectionPoints" class="form-label">Reflection Points</label>
+                                        <div id="reflectionPoints" class="form-control" style="height: auto; min-height: 200px;">
+                                            <p>Enter reflection points and lessons learned...</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label for="photos" class="form-label">Photos</label>
+                                        <input class="form-control" type="file" id="photos" accept="image/*">
+                                        <small class="form-text text-muted">Upload incident photos</small>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label for="attachments" class="form-label">Attachments</label>
+                                        <input class="form-control" type="file" id="attachments" multiple>
+                                        <small class="form-text text-muted">Upload supporting documents</small>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <label for="remarks" class="form-label">Remarks</label>
+                                        <div id="remarks" class="form-control" style="height: auto; min-height: 150px;">
+                                            <p>Additional remarks or comments...</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label for="targetDate" class="form-label">Target Date to Reply</label>
+                                        <input type="date" class="form-control" id="targetDate">
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <hr/>
+                                    </div>
+                                    
+                                    <!-- Form Actions -->
+                                    <div class="col-12">
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <button type="reset" class="btn btn-secondary px-5">
+                                                <i class="bx bx-x me-1"></i>Cancel
+                                            </button>
+                                            <button type="submit" class="btn btn-primary px-5">
+                                                <i class="bx bx-check me-1"></i>Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end row-->
+            </div>
+        </div>
+        <!--end page wrapper -->
+        
+        <!--start overlay-->
+        <div class="overlay toggle-icon"></div>
+        <!--end overlay-->
+        
+        <!--Start Back To Top Button-->
+        <a href="javaScript:;" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a>
+        <!--End Back To Top Button-->
+        
+        <footer class="page-footer">
+            <p class="mb-0">Copyright © 2021. All right reserved.</p>
+        </footer>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!--plugins-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="assets/plugins/input-tags/js/tagsinput.js"></script>
+    <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <!--app JS-->
+    <script src="assets/js/app.js"></script>
+    
+    <!-- Froala Editor JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+    <script>
+        // Initialize Froala Editor for all text editors
+        document.addEventListener('DOMContentLoaded', function() {
+            // Circumstances Editor
+            new FroalaEditor('#circumstances', {
+                placeholderText: 'Describe the circumstances of the incident...',
+                charCounterCount: true,
+                toolbarButtons: {
+                    'moreText': {
+                        'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
+                    },
+                    'moreParagraph': {
+                        'buttons': ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote']
+                    },
+                    'moreRich': {
+                        'buttons': ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR']
+                    },
+                    'moreMisc': {
+                        'buttons': ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
+                        'align': 'right',
+                        'buttonsVisible': 2
+                    }
+                },
+                heightMin: 200,
+                heightMax: 400
+            });
+            
+            // Reflection Points Editor
+            new FroalaEditor('#reflectionPoints', {
+                placeholderText: 'Enter reflection points and lessons learned...',
+                charCounterCount: true,
+                toolbarButtons: {
+                    'moreText': {
+                        'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
+                    },
+                    'moreParagraph': {
+                        'buttons': ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote']
+                    },
+                    'moreRich': {
+                        'buttons': ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR']
+                    },
+                    'moreMisc': {
+                        'buttons': ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
+                        'align': 'right',
+                        'buttonsVisible': 2
+                    }
+                },
+                heightMin: 200,
+                heightMax: 400
+            });
+            
+            // Remarks Editor
+            new FroalaEditor('#remarks', {
+                placeholderText: 'Additional remarks or comments...',
+                charCounterCount: true,
+                toolbarButtons: {
+                    'moreText': {
+                        'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
+                    },
+                    'moreParagraph': {
+                        'buttons': ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote']
+                    },
+                    'moreRich': {
+                        'buttons': ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR']
+                    },
+                    'moreMisc': {
+                        'buttons': ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
+                        'align': 'right',
+                        'buttonsVisible': 2
+                    }
+                },
+                heightMin: 150,
+                heightMax: 300
+            });
+        });
+    </script>
+</body>
+</html>
