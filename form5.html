@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+    <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link
+      href="assets/plugins/metismenu/css/metisMenu.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-extended.css" rel="stylesheet" />
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link href="assets/css/icons.css" rel="stylesheet" />
+    <title>DNHA - Incident News Yokoten</title>
+
+    <style>
+      /* สไตล์พิเศษเพื่อให้เหมือนรูปต้นฉบับ */
+      .yokoten-header {
+        background-color: #fff;
+        border-bottom: 3px solid #000;
+        padding: 10px;
+      }
+      .denso-logo {
+        height: 40px;
+      }
+      .table-main-check thead {
+        background-color: #f8f9fa;
+        font-size: 0.85rem;
+      }
+      .status-ng {
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
+      }
+
+      /* ส่วน NG Section สีชมพู */
+      .ng-container {
+        background-color: #fce4e4;
+        border: 1px solid #f5c6cb;
+        padding: 15px;
+        border-radius: 4px;
+        margin-top: 20px;
+      }
+      .ng-title-bar {
+        color: #721c24;
+        font-weight: bold;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #f5c6cb;
+        padding-bottom: 5px;
+      }
+      .form-label-custom {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .label-required::before {
+        content: "* ";
+        color: red;
+      }
+
+      /* แถบสี Education/Evidence */
+      .box-label {
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        padding: 5px 10px;
+        font-weight: bold;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .attachment-tag {
+        background-color: #c82333;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 3px;
+        font-size: 0.75rem;
+        margin-right: 5px;
+      }
+
+      .bg-blue-status {
+        background-color: #0056b3;
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .bg-red-status {
+        background-color: #ff0000;
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .summary-table {
+        background-color: #fff;
+        font-size: 0.8rem;
+      }
+      .summary-table thead {
+        background-color: #ffe5d0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="sidebar-wrapper" data-simplebar="true">
+        <!-- <div class="sidebar-header">
+                <h4 class="logo-text">DNHA Safety</h4>
+            </div> -->
+      </div>
+
+      <header>
+        <div class="topbar d-flex align-items-center">
+          <nav class="navbar navbar-expand gap-3">
+            <div class="mobile-toggle-menu"><i class="bx bx-menu"></i></div>
+            <div class="top-menu ms-auto">
+              <ul class="navbar-nav align-items-center"></ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <div class="page-wrapper">
+        <div class="page-content">
+          <!--breadcrumb-->
+          <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">DNHA Safety</div>
+            <div class="ps-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Equipment Applicability
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="ms-auto">
+              <div class="btn-group">
+                <!-- <button type="button" class="btn btn-primary">Actions</button>
+                            <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button> -->
+                <div
+                  class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"
+                >
+                  <a class="dropdown-item" href="javascript:;">Save as Draft</a>
+                  <a class="dropdown-item" href="javascript:;">Print</a>
+                  <a class="dropdown-item" href="javascript:;">Export PDF</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end breadcrumb-->
+          <div class="card border-0 shadow-none mb-0">
+            <div class="card-body p-0">
+              <div
+                class="d-flex justify-content-between align-items-center yokoten-header"
+              >
+                <!-- <img src="https://www.denso.com/global/en/common/img/logo.png" alt="DENSO" class="denso-logo"> -->
+                <h4 class="mb-0 fw-bold">
+                  DNHA - Incident News Yokoten
+                  <small class="text-muted">Equipment Applicability</small>
+                </h4>
+                <!-- <div>
+                                <i class="bx bx-left-arrow-circle fs-3 text-danger"></i>
+                                <i class="bx bx-home-alt fs-3 text-danger ms-2"></i>
+                            </div> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  class="table table-bordered align-middle text-center table-main-check"
+                >
+                  <thead>
+                    <tr>
+                      <th style="width: 50px">Sr. No.</th>
+                      <th>Request Point</th>
+                      <th>Applicable Dept./Section</th>
+                      <th style="width: 100px">Number of Applicable Items</th>
+                      <th style="width: 100px">No. of NG Items</th>
+                      <th style="width: 80px">Status</th>
+                      <th style="width: 50px">Edit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td class="text-start">
+                        Conduct check as per the attached checklist for
+                        Refrigerator units.
+                      </td>
+                      <td>Respective HoSS [All Sections]</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td class="status-ng">NG</td>
+                      <td><i class="bx bx-pencil text-primary fs-4"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="row g-2 mb-3">
+                <div class="col-md-4">
+                  <div class="d-flex align-items-stretch h-100">
+                    <div
+                      class="box-label flex-shrink-0"
+                      style="background: #fdf2f2"
+                    >
+                      Education Sheet
+                    </div>
+                    <div class="card-body">
+                      <input
+                        type="file"
+                        class="form-control mb-3"
+                        id="photoInput"
+                        name="photo"
+                        accept="image/*"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-stretch h-100">
+                    <div
+                      class="box-label flex-shrink-0"
+                      style="background: #fdf2f2"
+                    >
+                      Check Evidence
+                    </div>
+                    <div class="card-body">
+                      <input
+                        type="file"
+                        class="form-control mb-3"
+                        id="photoInput"
+                        name="photo"
+                        accept="image/*"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex gap-1 h-100">
+                    <div
+                      class="bg-blue-status flex-fill d-flex align-items-center justify-content-center"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="bg-red-status flex-fill d-flex align-items-center justify-content-center"
+                    >
+                      1
+                    </div>
+                    <div class="d-flex flex-column gap-1">
+                      <button class="btn btn-sm btn-outline-secondary py-0">
+                        <i class="bx bx-save"></i> Save
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary py-0">
+                        <i class="bx bx-upload"></i> Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ng-container">
+                <div class="ng-title-bar">
+                  NG Equipment/ Process Details
+                  <span
+                    class="ms-3 fw-normal text-primary"
+                    style="font-size: 0.75rem"
+                    >NOTE: - Kindly attach evidence for the Safety Incident News
+                    sharing with TMs and the GEMBA check sheet.</span
+                  >
+                </div>
+
+                <form>
+                  <div class="row g-2 mb-3">
+                    <div class="col-md-1">
+                      <label class="form-label-custom label-required"
+                        >Sr. No.</label
+                      >
+                      <select class="form-select form-select-sm">
+                        <option>1</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label-custom label-required"
+                        >Area</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="Blower Housing Line"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label-custom label-required"
+                        >Equipment Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="Refrigerator"
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label-custom label-required"
+                        >NG Description</label
+                      >
+                      <textarea class="form-control form-control-sm" rows="2">
+Ventilation door mesh cover not available for compressor area.</textarea
+                      >
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label-custom label-required"
+                        >NG Photo</label
+                      >
+                      <div class="border bg-white p-1 text-center">
+                        <img
+                          src="https://via.placeholder.com/150x80?text=NG+Photo"
+                          class="img-fluid"
+                          style="max-height: 80px"
+                        />
+                        <div class="mt-1">
+                          <button
+                            type="button"
+                            class="btn btn-xxs btn-light border py-0"
+                          >
+                            Change Picture
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row g-2 mb-3 align-items-end">
+                    <div class="col-md-4">
+                      <label class="form-label-custom label-required"
+                        >Corrective Action Plan</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="Provide Metal mesh cover for prevention of rodent entry."
+                      />
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label-custom"
+                        >Support Member (Name & Dept.)</label
+                      >
+                      <div class="input-group input-group-sm">
+                        <input
+                          type="text"
+                          class="form-control w-50"
+                          value="parveen.yadav.a3r@ap.denso.com"
+                        />
+                        <select class="form-select w-25">
+                          <option>PRD - Blower</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label-custom">Timeline</label>
+                      <input
+                        type="date"
+                        class="form-control form-control-sm"
+                        value="2025-05-31"
+                      />
+                    </div>
+                    <div class="col-md-3 d-flex gap-2">
+                      <div
+                        class="border p-2 bg-white flex-grow-1 text-center"
+                        style="font-size: 0.7rem"
+                      >
+                        Please Attach.<br />
+                        <div class="card-body">
+                          <input
+                            type="file"
+                            class="form-control mb-3"
+                            id="photoInput"
+                            name="photo"
+                            accept="image/*"
+                          />
+                        </div>
+                      </div>
+                      <!-- <button
+                        type="button"
+                        class="btn btn-primary d-flex flex-column align-items-center justify-content-center px-3"
+                      >
+                        <i class="bx bx-save fs-4"></i> Save
+                      </button> -->
+                    </div>
+                  </div>
+                </form>
+
+                <div class="table-responsive">
+                  <table
+                    class="table table-sm table-bordered summary-table align-middle"
+                  >
+                    <thead>
+                      <tr class="text-center">
+                        <th>Area</th>
+                        <th>Equipment Name</th>
+                        <th>NG Description</th>
+                        <th>Action Plan</th>
+                        <th>Responsibility</th>
+                        <th>Timeline</th>
+                        <th>Trash</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Blower Housing Line</td>
+                        <td>Refrigerator</td>
+                        <td>
+                          Ventilation door mesh cover not available for
+                          compressor area.
+                        </td>
+                        <td>
+                          Provide Metal mesh cover for prevention of rodent
+                          entry.
+                        </td>
+                        <td>parveen.yadav.a3r@ap.denso.com</td>
+                        <td class="text-center">5/31/2025</td>
+                        <td class="text-center text-danger">
+                          <i class="bx bx-trash fs-5"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div
+                class="d-flex justify-content-between align-items-center mt-4 border-top pt-3"
+              >
+                <button class="btn btn-outline-dark">
+                  <i class="bx bx-chevron-left"></i> Back
+                </button>
+                <span class="text-primary fw-bold"
+                  >NOTE: - Submission is only allowed when details of all NG
+                  items have been mentioned.</span
+                >
+                <button class="btn btn-primary px-4">
+                  Final Submit <i class="bx bx-save"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+  </body>
+</html>

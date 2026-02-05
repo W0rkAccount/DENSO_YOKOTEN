@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+    <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link
+      href="assets/plugins/metismenu/css/metisMenu.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-extended.css" rel="stylesheet" />
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link href="assets/css/icons.css" rel="stylesheet" />
+    <title>DNHA - Corrective Action</title>
+
+    <style>
+      /* สไตล์เพิ่มเติมสำหรับหน้า Corrective Action */
+      .ca-header-title {
+        color: #002060;
+        font-weight: bold;
+        border-bottom: 2px solid #002060;
+        padding-bottom: 5px;
+      }
+      .section-label {
+        font-weight: bold;
+        color: #002060;
+        font-size: 0.85rem;
+        margin-top: 10px;
+      }
+      .data-text {
+        padding: 5px 0;
+        font-size: 0.9rem;
+      }
+
+      /* สไตล์กล่องรูปภาพ Before/After */
+      .photo-container {
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        position: relative;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .photo-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #002060;
+        color: #fff;
+        padding: 2px 10px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        z-index: 5;
+      }
+      .photo-placeholder {
+        text-align: center;
+        color: #888;
+        font-size: 0.8rem;
+      }
+
+      /* สไตล์ตาราง Remarks History */
+      .history-title {
+        background-color: #002060;
+        color: white;
+        padding: 5px 15px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-top: 20px;
+      }
+      .table-history {
+        background-color: #f2f2f2;
+        font-size: 0.85rem;
+      }
+      .table-remarks thead {
+        border-top: 2px solid #002060;
+        border-bottom: 2px solid #002060;
+      }
+
+      /* ปุ่ม Submit ด้านข้าง */
+      .side-submit-btn {
+        position: fixed;
+        right: 30px;
+        bottom: 50px;
+        text-align: center;
+        z-index: 1000;
+        cursor: pointer;
+      }
+      .side-submit-btn i {
+        font-size: 3.5rem;
+        color: #002060;
+        display: block;
+      }
+      .side-submit-btn span {
+        font-weight: bold;
+        color: #002060;
+        font-size: 0.9rem;
+      }
+
+      .attachment-badge {
+        background-color: #4472c4;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 2px;
+        font-size: 0.75rem;
+        display: block;
+        margin-bottom: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="sidebar-wrapper" data-simplebar="true"></div>
+
+      <header>
+        <div class="topbar d-flex align-items-center">
+          <nav class="navbar navbar-expand gap-3">
+            <div class="mobile-toggle-menu"><i class="bx bx-menu"></i></div>
+            <div class="top-menu ms-auto">
+              <ul class="navbar-nav align-items-center"></ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <div class="page-wrapper">
+        <div class="page-content">
+          <!--breadcrumb-->
+          <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">DNHA Safety</div>
+            <div class="ps-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Equipment Applicability
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="ms-auto">
+              <div class="btn-group">
+                <!-- <button type="button" class="btn btn-primary">Actions</button>
+                            <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button> -->
+                <div
+                  class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"
+                >
+                  <a class="dropdown-item" href="javascript:;">Save as Draft</a>
+                  <a class="dropdown-item" href="javascript:;">Print</a>
+                  <a class="dropdown-item" href="javascript:;">Export PDF</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end breadcrumb-->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center text-primary">
+              <!-- <i class="bx bx-show fs-4 me-2"></i
+              ><strong>View Incident Details</strong> -->
+            </div>
+            <div class="text-center">
+              <h4 class="mb-0 fw-bold" style="color: #000">
+                DNHA - Incident News Yokoten
+              </h4>
+              <span class="text-muted">Corrective Action</span>
+            </div>
+            <div class="d-flex gap-2">
+              <!-- <i class="bx bx-left-arrow-circle fs-2 text-danger"></i>
+              <i class="bx bx-home-alt fs-2 text-danger"></i> -->
+            </div>
+          </div>
+
+          <div class="card shadow-none border-0 bg-transparent">
+            <div class="card-body p-0">
+              <div class="row g-3">
+                <div class="col-md-1">
+                  <div class="section-label">ID</div>
+                  <div class="data-text">127</div>
+                </div>
+                <div class="col-md-2">
+                  <div class="section-label">Section</div>
+                  <div class="data-text">PRD - Blower</div>
+                </div>
+                <div class="col-md-2">
+                  <div class="section-label">Area</div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Blower Housing Line"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <div class="section-label">Equipment Name</div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Refrigerator"
+                  />
+                </div>
+                <div class="col-md-5">
+                  <div class="section-label">NG Description</div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Ventilation door mesh cover not available for compress"
+                  />
+                </div>
+              </div>
+
+              <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                  <div class="section-label">Action Plan</div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Provide Metal mesh cover for prevention of rodent entry."
+                  />
+                </div>
+                <div class="col-md-4">
+                  <div class="section-label">Responsibility</div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="parveen.yadav.a3r@ap.denso.com"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <div class="section-label">Target Date</div>
+                  <input type="text" class="form-control" value="5/31/2025" />
+                </div>
+              </div>
+
+              <div class="row g-3 mt-1">
+                <div class="col-md-8">
+                  <div class="section-label">Action Taken</div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Mesh Cover provided to prevent rodent entry."
+                  />
+                </div>
+                <div class="col-md-2">
+                  <div class="section-label">CAPA Status</div>
+                  <select
+                    class="form-select border-primary fw-bold text-primary"
+                  >
+                    <option>Approved</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <div class="section-label">Action Taken On</div>
+                  <input type="text" class="form-control" value="5/25/2025" />
+                </div>
+              </div>
+
+              <div class="row g-3 mt-3">
+                <div class="col-md-4">
+                  <div class="photo-container">
+                    <div class="photo-label">Before Photo</div>
+                    <div class="photo-placeholder">
+                      <i class="bx bx-image fs-1"></i><br />
+                      Tap or click to add a picture
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="photo-container">
+                    <div class="photo-label">After Photo</div>
+                    <div class="photo-placeholder">
+                      <i class="bx bx-image fs-1"></i><br />
+                      Tap or click to add a picture
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="section-label">Attachments</div>
+                  <div class="border p-2 bg-white" style="min-height: 165px">
+                    <div class="card-body">
+                      <input
+                        type="file"
+                        class="form-control mb-3"
+                        id="photoInput"
+                        name="photo"
+                        accept="image/*"
+                      />
+                    </div>
+                    <div class="mt-4 text-center text-muted">
+                      <i class="bx bx-paperclip"></i> Attach file
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered align-middle table-remarks">
+                  <thead>
+                    <tr class="text-center bg-white">
+                      <th style="width: 80px">Sr. No.</th>
+                      <th>Remarks</th>
+                      <th>Remarks By</th>
+                      <th style="width: 250px">Remarks On</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">2</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="Action has been verified at GEMBA."
+                        />
+                      </td>
+                      <td class="text-center">Vivek Sarna</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control text-center"
+                          value="5/25/2025 13:20 PM"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="history-title">Remarks History</div>
+              <div class="table-responsive">
+                <table class="table table-sm table-history mb-0">
+                  <thead>
+                    <tr class="text-center">
+                      <th style="width: 80px">Sr. No.</th>
+                      <th style="width: 150px">Remarks Description</th>
+                      <th></th>
+                      <th>Remarks By</th>
+                      <th style="width: 250px">Remarks On</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">1</td>
+                      <td class="fw-bold">Action Taken</td>
+                      <td>Action has been taken.</td>
+                      <td class="text-center">Vivek Sarna</td>
+                      <td class="text-center">5/25/2025 11:07 AM</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="side-submit-btn">
+        <i class="bx bxs-save"></i>
+        <span>Submit</span>
+      </div> -->
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+  </body>
+</html>

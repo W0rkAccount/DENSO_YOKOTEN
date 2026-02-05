@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+    
+    <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-extended.css" rel="stylesheet" />
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link href="assets/css/icons.css" rel="stylesheet" />
+    
+    <title>DNHA - Incident News Yokoten Status</title>
+
+    <style>
+        /* สไตล์พิเศษเพื่อให้เหมือนรูปภาพต้นฉบับ */
+        body { background-color: #f0f2f5; }
+        .status-header { background: white; padding: 10px 20px; border-bottom: 2px solid #ddd; }
+        .filter-section { background-color: #e9ecef; padding: 10px; border-bottom: 3px solid #b22222; }
+        
+        /* ตารางด้านซ้าย (Blue Style) */
+        .table-blue { border: 2px solid #007bff; border-radius: 5px; overflow: hidden; background: white; }
+        .table-blue thead { background-color: #5bc0de; color: #000; }
+        
+        /* ตารางด้านขวา (Gray Style) */
+        .table-gray { border: 2px solid #888; border-radius: 5px; overflow: hidden; background: #d3d3d3; }
+        .table-gray thead { background-color: #bdbdbd; color: #000; }
+
+        .table-sm-custom th, .table-sm-custom td { font-size: 0.75rem; padding: 4px; vertical-align: middle; }
+        
+        /* ส่วนล่าง (Summary Bar) */
+        .summary-bar { 
+            background-color: #fff; 
+            border-top: 2px solid #007bff; 
+            padding: 5px 10px; 
+            position: fixed; 
+            bottom: 0; 
+            width: calc(100% - 250px); /* หักพื้นที่ Sidebar */
+            display: flex; 
+            gap: 2px;
+        }
+        .summary-box { 
+            background-color: #e9ecef; 
+            border: 1px solid #ccc; 
+            padding: 2px 10px; 
+            font-size: 0.8rem; 
+            font-weight: bold;
+        }
+        .summary-total { background-color: #5bc0de; color: #000; }
+
+        .btn-export { border: 2px solid #b22222; color: #b22222; border-radius: 10px; font-weight: bold; }
+        .btn-reset { background-color: #b22222; color: white; border-radius: 5px; }
+        
+        .logo-denso { color: #e11c2b; font-weight: bolder; font-style: italic; font-size: 1.5rem; }
+        
+        /* ปรับระดับความสูงของหน้าจอ */
+        .scroll-container { height: 65vh; overflow-y: auto; }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
+                <!-- <h4 class="logo-text">DNHA Safety</h4> -->
+            </div>
+            </div>
+
+        <header>
+            <div class="topbar d-flex align-items-center">
+                <nav class="navbar navbar-expand gap-3">
+                    <div class="mobile-toggle-menu"><i class="bx bx-menu"></i></div>
+                    <div class="top-menu ms-auto">
+                        </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="page-wrapper">
+            <div class="page-content">
+                 <!--breadcrumb-->
+          <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">DNHA Safety</div>
+            <div class="ps-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Equipment Applicability
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="ms-auto">
+              <div class="btn-group">
+                <!-- <button type="button" class="btn btn-primary">Actions</button>
+                            <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button> -->
+                <div
+                  class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"
+                >
+                  <a class="dropdown-item" href="javascript:;">Save as Draft</a>
+                  <a class="dropdown-item" href="javascript:;">Print</a>
+                  <a class="dropdown-item" href="javascript:;">Export PDF</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end breadcrumb-->
+                <!-- <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="logo-denso">DENSO <span style="font-size: 0.8rem; color: #555;">Crafting the Core</span></div>
+                    <div class="h4 fw-bold mb-0">DNHA - Incident News Yokoten <span class="fw-normal">Status Screen</span></div>
+                    <div>
+                        <button class="btn btn-sm btn-export me-2">Export</button>
+                        <i class="bx bx-home-alt fs-3 text-danger cursor-pointer"></i>
+                    </div>
+                </div> -->
+
+                <div class="filter-section mb-3">
+                    <div class="row g-2 align-items-end">
+                        <div class="col-md-2">
+                            <label class="small fw-bold">Group Company</label>
+                            <select class="form-select form-select-sm"><option>All</option></select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="small fw-bold">Date of Incident</label>
+                            <div class="d-flex gap-1">
+                                <input type="date" class="form-control form-control-sm" value="2015-04-01">
+                                <input type="date" class="form-control form-control-sm" value="2025-06-13">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <label class="small fw-bold">Grade</label>
+                            <select class="form-select form-select-sm"><option>All</option></select>
+                        </div>
+                        <div class="col-md-1">
+                            <label class="small fw-bold">Class</label>
+                            <select class="form-select form-select-sm"><option>All</option></select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="small fw-bold">Title of Incident</label>
+                            <input type="text" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-1">
+                            <label class="small fw-bold">Plant/Unit</label>
+                            <select class="form-select form-select-sm"><option>All</option></select>
+                        </div>
+                        <div class="col-md-1">
+                            <label class="small fw-bold">Dept./Section</label>
+                            <select class="form-select form-select-sm"><option>All</option></select>
+                        </div>
+                        <div class="col-md-1 text-end">
+                            <button class="btn btn-sm btn-reset w-100">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-2">
+                    <div class="col-md-7">
+                        <div class="table-blue">
+                            <div class="scroll-container">
+                                <table class="table table-sm table-sm-custom table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>Company</th>
+                                            <th>Grade</th>
+                                            <th>Class</th>
+                                            <th>Title</th>
+                                            <th>Date</th>
+                                            <th>Next</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">OGC</td>
+                                            <td class="text-center">Grad-e</td>
+                                            <td>Fire near Miss</td>
+                                            <td>Smoke at refrigerator</td>
+                                            <td class="text-center">4/12/2025</td>
+                                            <td class="text-center text-danger"><i class="bx bx-chevron-right-circle fs-5"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">OGC</td>
+                                            <td class="text-center">Grade-II</td>
+                                            <td>Non lost-time: Full recovery</td>
+                                            <td>Fall due to loss of balance during move to workbench</td>
+                                            <td class="text-center">4/17/2025</td>
+                                            <td class="text-center text-danger"><i class="bx bx-chevron-right-circle fs-5"></i></td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="table-gray">
+                            <div class="scroll-container">
+                                <table class="table table-sm table-sm-custom table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>Plant</th>
+                                            <th>Dept./Section</th>
+                                            <th>Status</th>
+                                            <th>Total</th>
+                                            <th>NG Nos.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Plant-2</td>
+                                            <td>PRD - Blower</td>
+                                            <td class="fw-bold">Applicable</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center bg-primary text-white">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plant-2</td>
+                                            <td>PRD - Molding</td>
+                                            <td>Not Applicable</td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-bar">
+                    <div class="summary-box summary-total">Total Yokoten: 45</div>
+                    <div class="summary-box">Applicable: 3</div>
+                    <div class="summary-box">Not Applicable: 18</div>
+                    <div class="summary-box">No Response: 32</div>
+                    <div class="summary-box">Total Applicable Items: 9</div>
+                    <div class="summary-box">Total NG Items: 7</div>
+                    <div class="summary-box">Pending Items: -</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
